@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'main.middlewares.basket_middleware',
 ]
 
 ROOT_URLCONF = 'booktime.urls'
@@ -134,3 +135,10 @@ else:
     EMAIL_BACKEND = (
         "django.core.mail.backends.console.EmailBackend"
     )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
+AUTH_USER_MODEL = "main.User"
+
+LOGIN_REDIRECT_URL = " /accounts/profile/"
